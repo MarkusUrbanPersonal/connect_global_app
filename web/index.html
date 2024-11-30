@@ -124,54 +124,9 @@
     </a>
   </div>
 
-  <!--<h2 class="text-4xl dark:text-white" style="font-weight:600">Remember<br>your life 🌞</h2>-->
-
   <div class="mt-8 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
     <span class="font-medium">Welcome!</span> Interact with your groups
   </div>
-
-
-  <!--<div class="scroll_date_container" style="margin-top:30px;">
-    <p class="scroll_date text-sm">Setembre 2023</p>
-  </div>-->
-
-  <!-- Make right scroll as dribble shot of dates below the search bar -->
-  <!-- Make design choice card image full width or padding (ask mama) -->
-
-  <!--<div class="event_row" style="margin-top: 30px;">
-    <div class="event_card" onclick="start();">
-
-      <div class="image_container">
-        <img class="event_image" src="https://media.cntraveller.com/photos/611bece96ab96bf3ecf1f370/16:9/w_2992,h_1683,c_limit/feastival-food-festival-cnt-21aug18-pr.jpg" alt="Event image">
-
-       
-        <p class="event_category_chip">Administrator</p>
-
-        <div class="event_users flex mb-5 -space-x-4">
-          <img class="w-7 h-7 border-2 border-white rounded-full dark:border-gray-800" src="https://xsgames.co/randomusers/avatar.php?g=male" alt="">
-          <img class="w-7 h-7 border-2 border-white rounded-full dark:border-gray-800" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="">
-          <img class="w-7 h-7 border-2 border-white rounded-full dark:border-gray-800" src="https://xsgames.co/randomusers/avatar.php?g=male" alt="">
-          <img class="w-7 h-7 border-2 border-white rounded-full dark:border-gray-800" src="https://xsgames.co/randomusers/avatar.php?g=female" alt="">
-        </div>
-
-      </div>
-
-      <div class="event_participants">
-        </dv>
-
-        <div class="event_details">
-          <p class="event_title">Sonderlin Festival</p>
-          <i class="date_icon material-icons-outlined">group</i>
-          <p class="event_date" style="margin-right: 6px;">12 participants</p>
-          <i class="time_icon material-icons-outlined">check_circle</i>
-          <p class="event_hour">Created by you</p>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-  -->
 
   <div id="groups_empty_screen" style="text-align: center;">
 
@@ -181,10 +136,7 @@
     <h5 class="mt-4 text-xl font-bold dark:text-white">Create your first group</h5>
     <p class="mt-1 mb-3 text-gray-500 dark:text-gray-400">For family, friends, colleages, or more!</p>
 
-    <button style="width: 80%;" type="button" class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create a new group</button>
-
-
-
+    <button onclick="start_group_create();" style="width: 80%;" type="button" class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create a new group</button>
 
 
   </div>
@@ -966,7 +918,7 @@
 
 </div>
 
-<div id="screen_edit_profile" style="padding:20px;display:;">
+<div id="screen_edit_profile" style="padding:20px;display:none;">
 
   <div id="create_header">
     <div style="width:100%;">

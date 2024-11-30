@@ -1298,3 +1298,13 @@ function join_interest_animation(interest_id, action) {
 
 
 }
+
+
+
+
+// Join Create
+
+function start_group_create() {
+
+  // Hide the group page and 
+}

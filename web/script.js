@@ -350,8 +350,7 @@ function open_group(group_id, name, image, description) {
   document.getElementById("screen_main").style.display = "none";
   document.getElementById("screen_create").style.display = "none";
 
-  // Create participants cards
-  get_group_participants(group_id);
+  create_demo_users();
 
   document.getElementById("group_name").innerHTML = name;
 
@@ -364,7 +363,7 @@ function open_group(group_id, name, image, description) {
   }
   
 
-  document.getElementById("group_image").src = "https://timefactories.com/lifeline/useruploads/" + image;
+  document.getElementById("group_image").src = image;
 
   //opened_group_id = group_id;
 
@@ -423,7 +422,7 @@ function addRow(participant) {
   var cell = row.insertCell(); // Insert a cell in the row
   cell.innerHTML = `
     <div style="display:flex;" onclick="open_profile('${participant[0]}', '${decodeURIComponent(participant[1])}', '${participant[2]}', '${participant[3]}', '${participant[4]}');" scope="row" class="flex items-center px-1 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-      <img class="w-10 h-10 rounded-full" src="https://timefactories.com/lifeline/useruploads/${participant[2]}" alt="Profile picture">
+      <img class="w-10 h-10 rounded-full" src="${participant[2]}" alt="Profile picture">
       <div class="pl-3">
         <div class="text-base font-semibold">${decodeURIComponent(participant[1])}</div>
         <div class="font-normal text-gray-500">@${participant[4]}</div>
@@ -496,49 +495,6 @@ function load_groups(user_id) {
 function escapeSingleQuotes(str) {
   return str.replace(/'/g, "\\'");
 }
-
-function create_group_cards(data) {
-
-  for (var i in data) {
-
-    group = data[i];
-
-    // See if it is own creation
-    var administrator = "You are a member"
-
-    if (true) { administrator = "Created by you" }
-
-    var group_card_template = `
-    <div class="event_row" style="margin-top: 30px;">
-        <div class="event_card" onclick="open_group('${group["group_id"]}', '${group["group_name"]}', '${group["image"]}', '${escapeSingleQuotes(group["description"])}');">
-          <div class="image_container">
-            <img class="event_image" src="https://timefactories.com/lifeline/useruploads/${group["image"]}" alt="Event image">
-          </div>
-          <div class="event_participants">
-          </dv>
-            <div class="event_details">
-              <p class="event_title">${group["group_name"]}</p>
-              <i class="date_icon material-icons-outlined">group</i>
-              <p class="event_date" style="margin-right: 6px;">${group["description"]}</p>
-              <i class="time_icon material-icons-outlined">check_circle</i>
-              <p class="event_hour">${administrator}</p>
-            </div>
-          </div>
-        </div>
-      </div>`;
-
-
-    let frag = document.createRange().createContextualFragment(group_card_template);
-    document.getElementById("group_container").appendChild(frag);
-
-  }
-
-  // Hide the skeleton loader and show all groups
-  document.getElementById("group_skeleton_loaders").style.display = "none";
-  document.getElementById("group_container").style.display = "block";
-
-}
-
 
 
 // INTERESTS
@@ -905,7 +861,7 @@ function open_profile(id, name, image, description, username) {
   document.getElementById("screen_group").style.display = "none";
   
 
-  document.getElementById("profile_image").src = "https://timefactories.com/lifeline/useruploads/" + image;
+  document.getElementById("profile_image").src = image;
   document.getElementById("profile_name").innerHTML = name;
   document.getElementById("profile_username").innerHTML = "@" + username;
 
@@ -932,8 +888,6 @@ function open_profile(id, name, image, description, username) {
     // Hide the "In common" tab (make it second)
 
     document.getElementById("profile_common_tab").style.display = "none";
-
-    console.log("It's my own profile!");
   }
 
 
@@ -949,163 +903,7 @@ function open_profile(id, name, image, description, username) {
 
 // Get user data -> We need user profiles -> We need backend & Flask!
 
-function open_profile_edit() {
-
-  // Preview card
-  document.getElementById("profile_image_preview").src = user.image;
-  document.getElementById("profile_name_preview").innerHTML = user.name;
-  document.getElementById("profile_preview_username").innerHTML = user.username;
-  
-  // Editing fields
-  document.getElementById("profile_name_input").value = user.name;
-  document.getElementById("profile_description_input").value = user.description;
-
-  // Allow to edit email and username (PRODUCTION)  
-  document.getElementById("email_edit").value = user.email;
-  // . . .
-
-}
-
-function save_profile_edit() {
-
-  var name = document.getElementById("profile_name_input");
-  var description = document.getElementById("profile_description_input");
-
-  var error_input_css = "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 mt-4 dark:bg-red-100 dark:border-red-400";
-
-  var name_error_text = document.getElementById("profile_name_error");
-
-  // Input status reset
-
-  name.className = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full mt-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
-
-  name_error_text.style.display = "none";
-
-  // Javascript validation (re-checked on server side)
-
-  var error = false;
-
-    if (name.value.length <= 0) {
- 
-        error = true;
-        name.className = error_input_css;
-        name_error_text.style.display = "block";
- 
-    }
-
-    // Next step
-
-    if (error == false) {
-
-        // If image changed, upload it!
-        if (document.getElementById("dropzone-file-3").value != "") {
-
-          user.name = name;
-          user.description = description;
-      
-          upload_cover_image("profile");
-        
-        }
-
-       // If image is same, just change if the fields changed
-       else if (name != user.name || description != user.description) {
-
-        user.name = name;
-        user.description = description;
-        
-        // Send changes to server
-        var data = {
-          id: user.id,
-          name: name,
-          description: description,
-          image: user.image
-        }
-
-        edit_profile_fetch(data);
-
-      }
-
-
-    }
-
-}
-
-
-function edit_profile_fetch(data) {
-
-    fetch('https://timefactories.com/cgi-bin/connectapp/main.cgi/editprofile', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data_sent)
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error editing the profile');
-        }
-        return response.json();
-      }) 
-      .then(data => {
-        
-        console.log('Profile edited successfully - ', data);        
-      
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  
-  
-}
-
-
-
-
-function show_error_alert() {
-
-  alert("Something went wrong");
-
-}
-
-
-var step = 1;
-
-function event_create_next() {
-
-  step = step + 1;
-
-  if (step == 2) {
-
-    // Header
-    document.getElementById("create_event_header_1").style.display = "none";
-    document.getElementById("create_event_header_2").style.display = "block";
-
-    // Body
-    document.getElementById("my-dropzone").style.display = "none";
-    document.getElementById("create_event_image_caption").style.display = "block";
-
-  }
-
-  else if (step == 3) {
-
-        // Header
-        document.getElementById("create_event_header_2").style.display = "none";
-        document.getElementById("create_event_header_3").style.display = "block";
-    
-        // Body
-        document.getElementById("create_event_image_caption").style.display = "none";
-        document.getElementById("create_event_map").style.display = "block";
-
-  }
-
-
-}
-
-
-
 /* GROUP SHARE */
-// share_code is a global variable that stores the openen group share code
-var share_code = "";
 
 const share_btn = document.getElementById("share_group_button");
 
@@ -1113,9 +911,9 @@ const share_btn = document.getElementById("share_group_button");
 share_btn.addEventListener("click", async () => {
   try {
     const shareData = {
-      title: "Grup de Connect",
-      text: "Uneix-te al meu grup de connect",
-      url: "https://timefactories.com/cohereo?join=" + share_code,
+      title: "Join my group on Connect",
+      text: "Click the link to join my group on Connect",
+      url: "https://timefactories.com/lauzhack/"
     };
     await navigator.share(shareData);
     console.log("Shared successfully");
@@ -1123,23 +921,6 @@ share_btn.addEventListener("click", async () => {
     console.log(`Error: ${err}`);
   }
 });
-
-
-
-function start() {
-  //document.getElementById("screen_main").style.display = "none";
-  //document.getElementById("screen_event").style.display = "block";
-}
-
-function start2() {
-  //document.getElementById("screen_event").style.display = "none";
-  //document.getElementById("screen_image").style.display = "block";
-}
-
-function start3() {
-  //document.getElementById("screen_image").style.display = "none";
-  //document.getElementById("screen_profile").style.display = "block";
-}
 
 
 
@@ -1307,4 +1088,45 @@ function join_interest_animation(interest_id, action) {
 function start_group_create() {
 
   // Hide the group page and 
+}
+
+
+function search_interest() {
+
+  document.getElementById("screen_profile").style.display = "none";
+  document.getElementById("screen_interests").style.display = "block";
+
+}
+
+
+
+
+// Group Discover 
+function discover_groups() {
+
+  document.getElementById("groups_empty_screen").style.display = "none";
+  document.getElementById("group_skeleton_loaders").style.display = "block";
+
+  setTimeout(function() {
+    document.getElementById("group_skeleton_loaders").style.display = "none";
+    document.getElementById("group_container").style.display = "block";
+  }, 1000);
+  
+}
+
+
+
+var demo_users = [
+  [0, "Joan", "https://api.dicebear.com/6.x/initials/svg?seed=Joan", "UPC Student", "joan"],
+  [0, "Mariona", "https://api.dicebear.com/6.x/initials/svg?seed=Mariona", "UPC Student", "mariona"],
+  [0, "Martina", "https://api.dicebear.com/6.x/initials/svg?seed=Martina", "UPC Student", "martina"]
+];
+
+
+function create_demo_users() {
+
+  for (let i = 0; i < demo_users.length; i++) {
+    addRow(demo_users[i]);
+  }
+  
 }

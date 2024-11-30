@@ -125,7 +125,7 @@
   </div>
 
   <div class="mt-8 p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
-    <span class="font-medium">Welcome!</span> Interact with your groups
+    <span class="font-medium">Welcome!</span> Your profile is almost ready
   </div>
 
   <div id="groups_empty_screen" style="text-align: center;">
@@ -133,17 +133,51 @@
     <img src="./src/icons/group.png" class="mt-10" style="display: block;margin-left: auto;margin-right: auto;width: 150px;">
 
     
-    <h5 class="mt-4 text-xl font-bold dark:text-white">Create your first group</h5>
-    <p class="mt-1 mb-3 text-gray-500 dark:text-gray-400">For family, friends, colleages, or more!</p>
+    <h5 class="mt-4 text-xl font-bold dark:text-white">Join your first group</h5>
+    <p class="mt-1 mb-3 text-gray-500 dark:text-gray-400">Connect with new people easily</p>
 
-    <button onclick="start_group_create();" style="width: 80%;" type="button" class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create a new group</button>
+    <button onclick="discover_groups();" style="width: 80%;" type="button" class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Explore groups</button>
 
 
   </div>
 
   <div id="group_container" style="display: none;">
 
-    <!-- Filled by Javascript -->
+    <div class="event_row" style="margin-top: 30px;">
+      <div class="event_card" onclick="open_group(0, 'LauzHack', 'https://lauzhack.com/images/preview.png', 'Student-run hackathon at EPFL');">
+        <div class="image_container">
+          <img class="event_image" src="https://lauzhack.com/images/preview.png" alt="Event image">
+        </div>
+        <div class="event_participants">
+        </dv>
+          <div class="event_details">
+            <p class="event_title">LauzHack 2024</p>
+            <i class="date_icon material-icons-outlined">group</i>
+            <p class="event_date" style="margin-right: 6px;">Student-run hackathon at EPFL</p>
+            <i class="time_icon material-icons-outlined">check_circle</i>
+            <p class="event_hour">LauzHack</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event_row" style="margin-top: 30px;">
+      <div class="event_card" onclick="open_group();">
+        <div class="image_container">
+          <img class="event_image" src="https://www.mwcbarcelona.com/cdn-cgi/image/f=auto,w=auto,h=auto/https://event-assets.gsma.com/Header-Images/MWC_GSMA_IMAGE.png" alt="Event image">
+        </div>
+        <div class="event_participants">
+        </dv>
+          <div class="event_details">
+            <p class="event_title">Mobile World Congress</p>
+            <i class="date_icon material-icons-outlined">group</i>
+            <p class="event_date" style="margin-right: 6px;">A big tech event in Barcelona</p>
+            <i class="time_icon material-icons-outlined">check_circle</i>
+            <p class="event_hour">MWC</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
@@ -246,175 +280,6 @@
   </div>
   
   </div>
-
-</div>
-
-<div id="screen_create" style="padding:20px;display:none;">
-
-  <div id="create_header">
-    <div style="width:100%;">
-      <svg style="cursor:pointer;" class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-      </svg>
-    </div>
-
-    <button id="group_save_button" onclick="create_group();" style="white-space:nowrap" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create Group</button>
-
-  </div>
-
-
-  <div id="visible_image_upload_zone" class="flex items-center justify-center w-full" style="margin-top:5px;">
-    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-      <div class="flex flex-col items-center justify-center pt-5 pb-6">
-        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-        </svg>
-        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click or drag to upload</span></p>
-        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-      </div>
-  
-      <input class="hidden" id="dropzone-file" accept="image/png, image/gif, image/jpeg" type="file" onchange="show_image_preview_create(event)" />
-    </label>
-  </div>
-
-
-
-
-  <img src="" id="visible_image_preview" style="width:100%;border-radius:0.5rem;display:none;" onclick="document.getElementById('dropzone-file').click()">
-
-  <div>
-    <input type="text" id="create_event_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full mt-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name of the group *" required>
-  </div>
-  <span id="create_event_name_error" class="error_text text-sm text-red-600 dark:text-red-500" style="padding-top:5px;">Add a name for the group</span>
-
-  <!--
-  <div class="relative max-w-sm mt-4">
-    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-      <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
-      </svg>
-    </div>
-    <input id="create_event_date" datepicker type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Date of the event *">
-  </div>
-  <span id="create_event_date_error" class="error_text text-sm text-red-600 dark:text-red-500" style="padding-top:5px;">Add a valid date</span>
-
-  <div class="relative">
-
-    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-      <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-          <path d="M8 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-          <path d="M13.8 12.938h-.01a7 7 0 1 0-11.465.144h-.016l.141.17c.1.128.2.252.3.372L8 20l5.13-6.248c.193-.209.373-.429.54-.66l.13-.154Z" />
-        </g>
-      </svg>
-    </div>
-    <input type="text" id="create_event_location" class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Location of the event">
-  </div>
-  -->
-
-  <textarea id="create_group_description" rows="4" class="block mt-4 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write a group description"></textarea>
-
-  <br><br><br>
-</div>
-
-<div id="screen_upload" style="padding: 20px;display:none;">
-
-  <div class="top_bar" style="margin-bottom:10px;">
-
-    <!-- Go back -->
-    <i class="material-icons-outlined top_bar_icon">arrow_back</i>
-
-    <div style="width:100%"></div>
-
-    <p class="top_bar_title">Group creation</p>
-
-    <div style="width:100%"></div>
-
-    <!-- Edit -->
-    <i class="material-icons-outlined top_bar_icon">edit</i>
-
-  </div>
-
-
-  <div id="create_event_header_1" style="display: ;" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8" style="
-    margin-top: 20px;
-    margin-bottom: 20px;
-">
-          <a href="#" class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
-              <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-                  <path d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z"></path>
-              </svg>Optional</a>
-            
-          <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">Add images</h1>
-          <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6" style="
-    margin-bottom: 0px;
-">Upload images from your phone or take a picture</p>
-          
-      </div>
-
-      <div id="create_event_header_2" style="display: none;" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8" style="
-      margin-top: 20px;
-      margin-bottom: 20px;
-  ">
-<a href="#" class="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
-  <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
-      <path d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z"/>
-  </svg>
-  Recommended
-</a>
-              
-            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">Add a caption</h1>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6" style="
-      margin-bottom: 0px;
-  ">Add a description to your image upload</p>
-            
-        </div>
-
-        <div id="create_event_header_3" style="display:none;" class="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8" style="
-      margin-top: 20px;
-      margin-bottom: 20px;
-  ">
-<a href="#" class="bg-purple-100 text-purple-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
-  <svg class="w-2.5 h-2.5 mr-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4 1 8l4 4m10-8 4 4-4 4M11 1 9 15"/>
-  </svg>
-  Advanced
-</a>
-              
-            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">Precise location</h1>
-            <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6" style="
-      margin-bottom: 0px;
-  ">Adjust the event location on the map for more accuracy</p>
-            
-        </div>
-
-        <div id="create_event_map" style="height: 220px;border-radius:10px;display: none;">
-        </div>
-      
-        <div id="create_event_image_caption" style="margin-top: 20px;display: none;">
-
-          <textarea id="message" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
-      
-        </div>
-
-
-  <form action="https://timefactories.com/cgi-bin/lifeline/main.cgi/upload"
-      class="dropzone flex flex-col items-center justify-center w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-      id="my-dropzone" style="height: 236px; display: flex;flex-direction: row;overflow: auto;margin-top: 0px;overflow-y: hidden;">
-
-      <div class="dz-message" data-dz-message>    
-         
-        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-        </svg>
-        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click or drag to upload</span></p>
-        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-      </div></div>
-    </form>
-
-    <button onclick="event_create_next();" style="margin-top: 20px;width: 100%;" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Continue</button>
-
 
 </div>
 
@@ -563,11 +428,9 @@
   </div>
 
   <div id="description_container" class="mt-4" style="display:none;border: 1px solid #E5E7EB;padding:15px;width:100%;border-radius: 10px;background-color: #F9FAFB">
-    <div id="group_description" class="text-sm text-center">Un grup pels professors de català d'Andorra, dels CAA</div>
+    <div id="group_description" class="text-sm text-center">Description</div>
   </div>
 
-  
-  <a href="#" style="width:100%;text-align:center;display:block;" class="mt-4 inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Send message</a>
 
   <figure class="max-w-lg mt-4">
     <img id="group_image" class="h-auto max-w-full rounded-lg " style="border: 1px solid #eee;"  src="./src/happy.jpg" alt="Banner">
@@ -590,17 +453,15 @@
 
             <tbody>
       
-              <!--<tr class="bg-white">
-      
-                <th scope="row" class="flex items-center px-1 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                  <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/6.x/initials/svg?seed=Markus" alt="Jese image">
-                  <div class="pl-3">
-                    <div class="text-base font-semibold">Markus Urban</div>
-                    <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                  </div>
-                </th>
-      
-              </tr>-->
+              <div style="display:flex;padding-top:0px;" onclick="open_profile('0', 'Markus Urban', 'https://api.dicebear.com/6.x/initials/svg?seed=Markus', 'UPC Student', 'markusurban');" scope="row" class="flex items-center px-1 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/6.x/initials/svg?seed=Markus" alt="Profile picture">
+                <div class="pl-3">
+                  <div class="text-base font-semibold">Markus Urban</div>
+                  <div class="font-normal text-gray-500">@markusurban</div>
+                </div>
+              </div>
+
+              <!-- Filled with Javascript -->
 
             </tbody>
           </table>

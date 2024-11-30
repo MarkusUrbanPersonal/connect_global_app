@@ -1,5 +1,6 @@
 
-![connect](https://github.com/user-attachments/assets/fce8ff45-3493-4830-b73f-f325f659b960)
+
+![connect](https://github.com/user-attachments/assets/4e4d3e86-d3e1-4b1d-a8d1-bbab7b523381)
 
 A new way to connect with people 🧑‍🦱👩‍🦰👨👩🏾‍🦱🧑‍🦰
 

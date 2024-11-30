@@ -348,7 +348,6 @@ function join_group(user_id, share_code) {
 function open_group(group_id, name, image, description) {
 
   document.getElementById("screen_main").style.display = "none";
-  document.getElementById("screen_create").style.display = "none";
 
   create_demo_users();
 
@@ -796,7 +795,7 @@ function create_interest_cards(data) {
             ${decodeURIComponent(interest["interest_name"])}
             </p>
             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                No en formes part
+                Created today
             </p>
         </div>
         <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
@@ -1095,6 +1094,7 @@ function search_interest() {
 
   document.getElementById("screen_profile").style.display = "none";
   document.getElementById("screen_interests").style.display = "block";
+  load_interests(0, query="");
 
 }
 

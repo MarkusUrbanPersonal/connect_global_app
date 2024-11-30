@@ -1,4 +1,5 @@
-# Connect
+
+![connect](https://github.com/user-attachments/assets/fce8ff45-3493-4830-b73f-f325f659b960)
 A new way to connect with people 🧑‍🦱👩‍🦰👨👩🏾‍🦱🧑‍🦰
 
 ### 1. The concept ☀️

@@ -15,19 +15,6 @@ var user = {
 
 var user_id = 1;
 
-
-// Join group links */
-
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-var url_code = urlParams.get('join');
-
-if (url_code) {
- 
-  join_group(user_id, url_code);
-
-}
-
 // Get user interests
 
 // Global variable that stores user interests in JSON
@@ -833,7 +820,7 @@ function create_common_interest_cards(data, location) {
             ${decodeURIComponent(interest["interest_name"])}
             </p>
             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                En formes part
+                Created today
             </p>
         </div>
     </div>

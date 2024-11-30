@@ -1,6 +1,5 @@
 
-
-![connect](https://github.com/user-attachments/assets/4e4d3e86-d3e1-4b1d-a8d1-bbab7b523381)
+![logo](https://github.com/user-attachments/assets/7b6bbed3-04fd-47ae-bf21-ecf64ef66114)
 
 A new way to connect with people 🧑‍🦱👩‍🦰👨👩🏾‍🦱🧑‍🦰
 

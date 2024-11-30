@@ -1,2 +1,2 @@
 # Connect
-# A way to connect with people
+A new way to connect with people 🧑‍🦱👩‍🦰👨👩🏾‍🦱🧑‍🦰

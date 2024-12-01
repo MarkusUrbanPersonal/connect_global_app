@@ -9,59 +9,10 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet">
 
-     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-
  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css'>
 <link rel="stylesheet" href="./style.css">
 
 <style>
-
-/* DROPZONE STYLING */
-.dropzone .dz-preview.dz-image-preview {
-
-  background: transparent !important;
-
-}
-
-.dropzone .dz-preview .dz-image {
-
-  border-radius: 5px !important;
-}
-
-.dropzone .dz-preview .dz-remove {
-
-  /*
-    font-weight: 500 !important;
-    padding-top: 0.625rem !important;
-    padding-bottom: 0.625rem !important;
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-    background-color: rgba(185, 28, 28, var(--tw-bg-opacity)) !important;
-    border-radius: 9999px !important;
-    color: white !important;
-  */
-
-    color: rgba(17, 24, 39, var(--tw-text-opacity));
-    font-weight: 500;
-    padding-top: 0.325rem;
-    padding-bottom: 0.325rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    border-color: rgba(209, 213, 219);
-    border-width: 1px;
-    border-radius: 9999px;
-    border: 1px solid rgba(209, 213, 219);
-    margin-top: 10px;
-    font-size: 12px;
-    
-}
-
-
-.dropzone .dz-preview .dz-progress .dz-upload { 
-  /* Change progress bar color */
-  /*background: #2563eb;  */
-}
 
 .logo-transform-color {
   filter: grayscale(1) sepia(1) hue-rotate(200deg) saturate(10) brightness(1.2);
@@ -148,6 +99,7 @@
 
   <div id="group_container" style="display: none;">
 
+    <!-- This events are demo events -->
     <div class="event_row" style="margin-top: 30px;">
       <div class="event_card" onclick="open_group(0, 'LauzHack', 'https://lauzhack.com/images/preview.png', 'Student-run hackathon at EPFL');">
         <div class="image_container">
@@ -330,35 +282,13 @@
 
       <div id="interests_empty_screen" style="display: none;text-align: center;">
 
-
         <p class="mt-12 mb-1 text-gray-500 dark:text-gray-400">Oops! We didn't find that interest</p>
 
         <button type="button" style="width: 80%;" class="mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create new interest</button>
 
       </div>
-
-
   
         <ul id="interest_page_container" role="list"style="margin-top:20px;">
-           
-         <!-- <li class="py-3 sm:py-4">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <img class="w-10 h-10 rounded-full" src="./src/interests/golf.png" alt="Interest">
-                </div>
-                <div class="flex-1 min-w-0 ms-4 ml-3">
-                    <p class="text-base font-medium text-gray-900 truncate dark:text-white">
-                        Golf
-                    </p>
-                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                        12 mil participants
-                    </p>
-                </div>
-                <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  <button id="join_button_0" onclick="join_interest(0);" type="button" class="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Join</button>
-                </div>
-            </div>
-      </li>-->
 
         <!-- Filled with Javascript -->
 
@@ -366,50 +296,6 @@
 
 </div>
 
-<!--
-<div id="screen_create_interest" style="padding:20px;display:none;">
-
-  <div id="create_header">
-    <div style="width:100%;">
-      <svg style="cursor:pointer;" class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-      </svg>
-    </div>
-
-    <button onclick="create_interest();" style="white-space:nowrap" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Create interest</button>
-
-  </div>
-
-  <div class="mt-12 mb-6 flex flex-col items-center">
-    <img id="interest_image_preview" style="width: 8rem;height: 8rem;" class="border border-gray-300 mb-3 rounded-full" src="./src/gray.jpg" alt="Interest image" />
-  </div>
-
-  <div>
-    <label for="interest_name_input" class="mt-6 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Interest name</label>
-    <input type="text" id="interest_name_input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Greek tragedies">
-  </div>
-  <span id="create_interest_name_error" class="error_text text-sm text-red-600 dark:text-red-500" style="padding-top:5px;">Add a name for the interest</span>
-
-
-  <label for="email_edit" class="mt-4 block text-sm font-medium text-gray-900 dark:text-white">Interest image</label>
-  <div class="flex items-center justify-center w-full mt-2">
-    <label for="dropzone-file-2" class="flex flex-col items-center justify-center w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-      <div class="flex flex-col items-center justify-center pt-5 pb-5">
-        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-        </svg>
-        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-      </div>
-      <input id="dropzone-file-2" type="file" accept="image/png, image/gif, image/jpeg" class="hidden" onchange="show_image_preview(event, 'interest')" />
-    </label>
-  </div>
-
-
-  <br><br><br><br>
-
-</div>
--->
 
 <div id="screen_group" style="padding:20px;display:none;">
 
@@ -473,195 +359,11 @@
           
   
         </div>
-        <!--<div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="services" role="tabpanel" aria-labelledby="services-tab">
-         
-          <p class="page_section_title">COMPARTIR</p>
-
-          <button onclick="share_group();" type="button" style="width: 100%;" class="text-gray-600 bg-white text-center inline-flex items-center border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-            <svg class="w-5 h-5 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.926 10.898 15 7.727m-7.074 5.39L15 16.29M8 12a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm12 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm0-11a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"/>
-            </svg>
-            
-              Convidar membres al grup
-          </button>
-
-
-          <button type="button" class="px-3 py-2 text-sm font-medium text-center inline-flex items-center rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            
-            </button>
-
-        </div>-->
     </div>
   </div>
 
-  
-
-
-
 </div>
 
-<div id="screen_image" style="padding:20px;display:none;">
-
-  <div class="top_bar">
-
-    <!-- Go back -->
-    <i class="material-icons-outlined top_bar_icon">arrow_back</i>
-
-    <div style="width:100%"></div>
-
-    <p class="top_bar_title">Image details</p>
-
-    <div style="width:100%"></div>
-
-    <!-- Edit -->
-    <i class="material-icons-outlined top_bar_icon">edit</i>
-
-  </div>
-
-  <div class="flex items-center space-x-4" style="margin-top:30px;">
-    <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/6.x/initials/svg?seed=Hans+Urban" alt="">
-    <div class="font-medium dark:text-white">
-      <div onclick="start3();">Hans Urban</div>
-      <div class="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
-    </div>
-  </div>
-
-  <img id="image_individual" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-
-  <div id="image_individual_rating" style="display:none;">
-
-    <div class="flex items-center">
-      <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-      </svg>
-      <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-      </svg>
-      <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-      </svg>
-      <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-      </svg>
-      <svg class="w-4 h-4 text-gray-300 mr-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-      </svg>
-      <p class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">4.95 out of 5</p>
-    </div>
-
-  </div>
-
-  <div class="event_page_description" style="margin-top:20px;margin-bottom:65px;">
-
-    <p class="page_section_title">DESCRIPTION</p>
-
-    <p id="event_page_description">Grans records d'una festa meravellosa</p>
-
-  </div>
-  
-
-</div>
-
-<div id="screen_users" style="padding:20px;display:none;">
-
-  <div class="top_bar" style="margin-bottom:10px;">
-
-    <!-- Go back -->
-    <i class="material-icons-outlined top_bar_icon">arrow_back</i>
-
-    <div style="width:100%"></div>
-
-    <p class="top_bar_title">Following</p>
-
-    <div style="width:100%"></div>
-
-    <!-- Edit -->
-    <i class="material-icons-outlined top_bar_icon" style="visibility:hidden;">edit</i>
-
-  </div>
-
-  <form class="flex items-center" style="margin-top:20px;">
-    <label for="simple-search" class="sr-only">Search</label>
-    <div class="relative w-full">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3a3 3 0 1 1-1.614 5.53M15 12a4 4 0 0 1 4 4v1h-3.348M10 4.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0ZM5 11h3a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z" />
-        </svg>
-
-      </div>
-      <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search by name..." required>
-    </div>
-    <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-      </svg>
-      <span class="sr-only">Search</span>
-    </button>
-  </form>
-
-</div>
-
-<div id="screen_users_list" style="display:none;">
-
-  <div class="relative overflow-x-auto sm:rounded-lg">
-
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-
-      <tbody>
-
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-
-          <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/6.x/initials/svg?seed=Markus" alt="Jese image">
-            <div class="pl-3">
-              <div class="text-base font-semibold">Markus Urban</div>
-              <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
-            </div>
-          </th>
-
-        </tr>
-
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-
-          <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/6.x/initials/svg?seed=Hans+Urban" alt="Jese image">
-            <div class="pl-3">
-              <div class="text-base font-semibold">Hans Urban</div>
-              <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
-            </div>
-          </th>
-
-        </tr>
-
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" style="background-color:#eee;">
-
-          <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/6.x/initials/svg?seed=Laura+Casanovas" alt="Jese image">
-            <div class="pl-3">
-              <div class="text-base font-semibold">Neil Sims</div>
-              <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
-            </div>
-          </th>
-
-        </tr>
-
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-
-          <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full" src="https://api.dicebear.com/6.x/initials/svg?seed=Sophie" alt="Jese image">
-            <div class="pl-3">
-              <div class="text-base font-semibold">Neil Sims</div>
-              <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
-            </div>
-          </th>
-
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-</div>
 
 <div id="screen_profile" style="padding:20px;display:none;">
 
@@ -723,7 +425,6 @@
 
   <!-- PROFILE CONTENT -->
 
-  
 <!-- Could activate shadow-->
 <div class="mt-4 w-full bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
   <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
@@ -776,107 +477,10 @@
   </div>
 </div>
 
-
-
- 
-
   <!-- END PROFILE CONTENT -->
 
 </div>
 
-<div id="screen_edit_profile" style="padding:20px;display:none;">
-
-  <div id="create_header">
-    <div style="width:100%;">
-      <svg style="cursor:pointer;" class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-      </svg>
-    </div>
-
-    <button onclick="save_profile_edit();" style="white-space:nowrap" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save changes</button>
-
-  </div>
-
-  <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex justify-end px-4 pt-4">
-      <br>
-    </div>
-    <div class="flex flex-col items-center pb-10">
-      <img id="profile_image_preview" class="w-24 h-24 mb-3 rounded-full" src="https://simulacionymedicina.es/wp-content/uploads/2015/11/default-avatar-300x300-1.jpg" alt="Bonnie image" />
-      <h5 id="profile_name_preview" class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Markus Urban</h5>
-      <span id="profile_username_preview" class="text-sm text-gray-500 dark:text-gray-400">Beta user</span>
-    </div>
-  </div>
-
-  <div>
-    <label for="profile_name_input" class="mt-6 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
-    <input type="text" id="profile_name_input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="Markus Urban" placeholder="Your Name">
-  </div>
-  <span id="profile_name_error" class="error_text text-sm text-red-600 dark:text-red-500" style="padding-top:5px;">Add a valid name</span>
-
-  <!--
-  <div>
-    <label for="email_edit" class="mt-4 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your username</label>
-    <input type="email" id="email_edit" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="markus_urban" placeholder="Your username" disabled>
-  </div>
-  -->
-
-  <div>
-
-    <label for="profile_description_input" class="mt-4 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your bio</label>
-    <textarea id="profile_description_input" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
-
-  </div>
-
-  <div>
-    <label for="email_edit" class="mt-4 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-    <input type="email" id="email_edit" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" value="" placeholder="Your email" disabled>
-  </div>
-
-  <label for="email_edit" class="mt-4 block mb-1 text-sm font-medium text-gray-900 dark:text-white">Profile image</label>
-  <div class="flex items-center justify-center w-full mt-4">
-    <label for="dropzone-file-3" class="flex flex-col items-center justify-center w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-      <div class="flex flex-col items-center justify-center pt-5 pb-5">
-        <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-        </svg>
-        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-      </div>
-      <input id="dropzone-file-3" type="file" accept="image/png, image/gif, image/jpeg" class="hidden" onchange="show_image_preview(event, 'profile')" />
-    </label>
-  </div>
-
-  <!--
-  <label for="email_edit" class="mt-5 block mb-3 text-sm font-medium text-gray-900 dark:text-white">Notification settings</label>
-
-  <label class="relative inline-flex items-center cursor-pointer">
-    <input type="checkbox" value="" class="sr-only peer">
-    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Push notifications</span>
-  </label>
-
-  <br>
-
-  <label class="relative inline-flex items-center cursor-pointer">
-    <input type="checkbox" value="" class="sr-only peer">
-    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Email notifications</span>
-  </label>
-
-  -->
-
-  <label for="email_edit" class="mt-4 block mb-3 text-sm font-medium text-gray-900 dark:text-white">Danger zone</label>
-
-  <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-    <span class="font-medium">Danger alert!</span> Deleting your account is a process that can't be undone
-  </div>
-
-  <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete your account</button>
-
-  <br><br><br><br>
-
-</div>
 
 <div id="bottom_bar" style="display:;">
 
@@ -923,15 +527,8 @@
 </div>
 
 
-<script>
-    Dropzone.options.myDropzone = {
-    "addRemoveLinks": true
-  };
-</script>
-
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/datepicker.min.js'></script>
 <script src='https://unpkg.com/tailwindcss-jit-cdn'></script>
 <script src='https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'></script>
 <script  src="./script.js"></script>

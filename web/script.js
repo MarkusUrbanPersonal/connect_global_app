@@ -836,6 +836,9 @@ function create_common_interest_cards(data, location) {
 
 
 
+
+
+
 // USER PROFILE
 
 
@@ -863,13 +866,15 @@ function open_profile(id, name, image, description, username) {
     document.getElementById("profile_common_tab").style.display = "block";
 
     // Get common interests
-    get_user_interests(id, "profile_diff");
+    //get_user_interests(id, "profile_diff");
+    // ...
 
   }
 
   else {
 
-    get_user_interests(id, "profile_own");
+    //get_user_interests(id, "profile_own");
+    // ...
 
     // Hide the "In common" tab (make it second)
 
@@ -1116,4 +1121,41 @@ function create_demo_users() {
     addRow(demo_users[i]);
   }
   
+}
+
+
+var random_recommended_users = ["John Doe", "Hans Urban", "Laura Casanovas"];
+
+function add_recommendations() {
+
+  for (let i = 0; i < random_recommended_users.length; i++) {
+
+    var name = random_recommended_users[i];
+    var username = name.split(' ').join('').toLowerCase();
+
+    var recommended_user_template = `
+      <div class="mb-6 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex justify-end px-4 pt-4">
+          <br>
+        </div>
+        <div class="flex flex-col items-center pb-10">
+            <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="https://api.dicebear.com/6.x/initials/svg?seed=${name}" alt="Profile image"/>
+            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">${name}</h5>
+            <span style="margin-bottom: 15px;" class="text-sm text-gray-500 dark:text-gray-400">This is a demo user</span>
+            <div class="flex mt-4 md:mt-6">
+                <!-- id, name, image, description, username -->
+                <a href="#" onclick="open_profile(100, '${name}', 'https://api.dicebear.com/6.x/initials/svg?seed=${name}', 'This is a demo user', '${username}');" style="margin-right: 5px;" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">View profile</a>
+                <a href="#" style="margin-left: 5px;" class="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Message</a>
+            </div>
+        </div>
+      </div>
+    `;
+
+
+    let frag = document.createRange().createContextualFragment(recommended_user_template);
+    document.getElementById("common_users").appendChild(frag);
+
+  }
+
+
 }

@@ -1097,9 +1097,12 @@ function search_interest() {
 
 
 
+var discover_open = false;
 
 // Group Discover 
 function discover_groups() {
+
+  discover_open = true;
 
   document.getElementById("groups_empty_screen").style.display = "none";
   document.getElementById("group_skeleton_loaders").style.display = "block";
@@ -1176,13 +1179,15 @@ function bottom_bar(page) {
 
   if (page == "home") {
 
-    // If alredy joined a group, show recommended users
-    document.getElementById("group_container").style.display = "none";
-    document.getElementById("screen_interests").style.display = "none";
-    add_recommendations();
-    document.getElementById("home_alert_text").innerHTML = "<span class='font-medium'>Hooray!</span> We found some connections ☀️";
-    document.getElementById("common_users").style.display = "block";
-    document.getElementById("screen_main").style.display = "block";
+    if (discover_open) {
+      // If alredy joined a group, show recommended users
+      document.getElementById("group_container").style.display = "none";
+      document.getElementById("screen_interests").style.display = "none";
+      add_recommendations();
+      document.getElementById("home_alert_text").innerHTML = "<span class='font-medium'>Hooray!</span> We found some connections ☀️";
+      document.getElementById("common_users").style.display = "block";
+      document.getElementById("screen_main").style.display = "block";
+    }
 
   }
 

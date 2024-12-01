@@ -845,10 +845,15 @@ function create_common_interest_cards(data, location) {
 // Open user profile
 function open_profile(id, name, image, description, username) {
 
-  // Replaced witha "Hide All" function
-
+  // Replaced with the "Hide All" function
+  document.getElementById("screen_main").style.display = "none";
   document.getElementById("screen_group").style.display = "none";
   
+  // Set the interests to a default interest list
+  // ...
+
+  // Set the common to a variation of the interests that the one selected
+  // ...
 
   document.getElementById("profile_image").src = image;
   document.getElementById("profile_name").innerHTML = name;
@@ -1154,6 +1159,30 @@ function add_recommendations() {
 
     let frag = document.createRange().createContextualFragment(recommended_user_template);
     document.getElementById("common_users").appendChild(frag);
+
+  }
+
+
+}
+
+
+
+
+
+// BOTTOM BAR
+// My eyes want to close but my head says:
+
+function bottom_bar(page) {
+
+  if (page == "home") {
+
+    // If alredy joined a group, show recommended users
+    document.getElementById("group_container").style.display = "none";
+    document.getElementById("screen_interests").style.display = "none";
+    add_recommendations();
+    document.getElementById("home_alert_text").innerHTML = "<span class='font-medium'>Hooray!</span> We found some connections ☀️";
+    document.getElementById("common_users").style.display = "block";
+    document.getElementById("screen_main").style.display = "block";
 
   }
 

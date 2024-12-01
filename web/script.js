@@ -1117,6 +1117,7 @@ function discover_groups() {
 
 
 var demo_users = [
+  [1, "Markus Urban", "https://api.dicebear.com/6.x/initials/svg?seed=Markus", "UPC Student", "markusurban"],
   [0, "Joan", "https://api.dicebear.com/6.x/initials/svg?seed=Joan", "UPC Student", "joan"],
   [0, "Mariona", "https://api.dicebear.com/6.x/initials/svg?seed=Mariona", "UPC Student", "mariona"],
   [0, "Martina", "https://api.dicebear.com/6.x/initials/svg?seed=Martina", "UPC Student", "martina"]
@@ -1181,6 +1182,7 @@ function bottom_bar(page) {
 
     if (discover_open) {
       // If alredy joined a group, show recommended users
+      document.getElementById("screen_profile").style.display = "none";
       document.getElementById("group_container").style.display = "none";
       document.getElementById("screen_interests").style.display = "none";
       add_recommendations();

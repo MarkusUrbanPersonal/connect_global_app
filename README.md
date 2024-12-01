@@ -1,6 +1,16 @@
-![connect_new_logo](https://github.com/user-attachments/assets/7d653a56-c534-48ae-8bb6-f9de00d57656)
 
-A new way to connect with people 🧑‍🦱👩‍🦰👨👩🏾‍🦱🧑‍🦰
+
+<p align="center">
+  <img style="margin-left:auto;margin-right:auto;" src="https://github.com/user-attachments/assets/7d653a56-c534-48ae-8bb6-f9de00d57656" alt="drawing" width="250" />
+</p>
+<br>
+<p align="center">
+<img src="https://github.com/user-attachments/assets/cf338bc9-883f-48a0-8ca8-bc6f802f58c4" width="400">
+</p>
+
+![Banner](https://github.com/user-attachments/assets/7b7b13a8-68ab-4ad2-998a-b61804584fc2)
+
+<img src="https://github.com/user-attachments/assets/748ac5a9-5cf6-4d2b-a5fd-0324609400ab">
 
 ### 1. The concept ☀️
 Meeting people can be challenging, especially when travelling or attending events like Hackathons. 

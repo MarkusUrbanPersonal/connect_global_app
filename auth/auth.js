@@ -4,72 +4,12 @@ function validate_email(email) {
   }
 
 
-function decodeJwtResponse (token) {
-      var base64Url = token.split('.')[1];
-      var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-      var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-  
-      return JSON.parse(jsonPayload);
-}
-
-var google_data = new Object();
-
-var is_google_auth = false;
-
-  
-function login() {
-
-    // Simple definition for user in future projects
-
-    var default_input_css = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
-    var error_input_css = "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400";
-
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    
-    var email_error_text = document.getElementById("email_error");
-    var password_error_text = document.getElementById("password_error");
-
-    // Input status reset
-
-    email.className, password.className = default_input_css;
-
-    email_error_text.style.display, password_error_text.style.display = "none";
- 
-    // Javascript validation (re-checked on server side)
- 
-    var error = false;
- 
-    if (email.value.length <= 0) {
- 
-        error = true;
-        email.className = error_input_css;
-        email_error_text.style.display = "block";
- 
-    }
- 
-    if (password.value.length < 6) {
-
-        error = true;
-        password.className = error_input_css;
-        password_error_text.style.display = "block";
-
-    } 
-
-    // Next step
-
-    if (error == false) {
-
-        server_login(email.value, password.value);
-
-    }
-
-}
-
-
 function username_chosen() {
+
+    var name = document.getElementById("name");
+    var email = document.getElementById("email");
+    var username = document.getElementById("username");
+    var password = document.getElementById("password");
 
     var default_input_css = "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500";
     var error_input_css = "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400";
@@ -200,91 +140,11 @@ function signup() {
 }
 
 
+// The signup has been replaced by a data pass for demo purposes
 function server_signup(name, email, username, password) {
-    const xhr = new XMLHttpRequest();
-xhr.open("POST", "https://timefactories.com/cgi-bin/connectapp/auth.cgi/signup");
-xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
-const body = JSON.stringify({
-  "name": name,
-  "email": email,
-  "username": username,
-  "password": password
-});
-xhr.onload = () => {
-  if (xhr.readyState == 4 && xhr.status == 200) {
-    var response = JSON.parse(xhr.responseText);
-
-    if (response.status == "success") {
-
-        document.getElementById("section_register").style.display = "none";
-        document.getElementById("section_email").style.display = "block";
-
-    }
-
-    else {
-
-        var error_input_css = "bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-red-100 dark:border-red-400";
-
-        if (response.status == "username taken") {
-
-            var username = document.getElementById("username");
-            var username_error_text = document.getElementById("username_error");
-            username.className = error_input_css;
-            username_error_text.style.display = "block";
-
-        }
-
-        else if (response.status == "email taken") {
-
-            document.getElementById("email_error").innerHTML = "This email is alredy in use";
-
-            var email = document.getElementById("email");
-            var email_error_text = document.getElementById("email_error");
-            email.className = error_input_css;
-            email_error_text.style.display = "block";
-            
-        }
-
-        else if (response.status == "email invalid") {
-
-            document.getElementById("email_error").innerHTML = "This email looks incorrect";
-
-            var email = document.getElementById("email");
-            var email_error_text = document.getElementById("email_error");
-            email.className = error_input_css;
-            email_error_text.style.display = "block";
-
-        }
-
-        else if (response.status == "data invalid") {
-
-            show_error_page();
-
-        }
-
-        else if (response.status == "database error") {
-
-            show_error_page();
-
-        }
-
-        else {
-
-            show_error_page();
-
-        }
-
-    }
-
-  } else {
-
-    show_error_page();
-
-  }
-};
-
-xhr.send(body);
-
+   
+    // Open the main app page and pass the values
+    
 }
 
 

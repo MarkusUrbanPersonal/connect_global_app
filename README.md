@@ -59,7 +59,7 @@ The web-app has been created using:
 
 
 ### **The future** ✨
-What about going one step further, and using *bluetooth* to actually connect users, as they're walking through common areas? The phone could display the common interests and conversation would start instantly. That is a future vision for this project. Until then, **Connect** is a great way to connect with new people at all kind of events. 
+What about going one step further, and using *bluetooth* to actually connect users, as they're walking through common areas? The phone could display the common interests and conversation would start instantly. That is a future vision for this project. Until then, **Connect** is a great way to meet with new people at all kind of events. 
 
 <p align="right">
   <img src="https://github.com/user-attachments/assets/4eefaf24-f4ca-4d93-a199-249804f0ed41" width="200">

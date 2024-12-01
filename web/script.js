@@ -1,15 +1,20 @@
 
-localStorage.setItem("lifeline_session_token", "dSJWHgJlU4YP9W21CC3VhhU7c/OpIA==*ZxbnAGTsLoTDHmVvD1y8/g==*5k60igPGJYZhabB8dHpAKw==*a5jmMBbc1azuNLnmaosCug==");
+//localStorage.setItem("lifeline_session_token", "dSJWHgJlU4YP9W21CC3VhhU7c/OpIA==*ZxbnAGTsLoTDHmVvD1y8/g==*5k60igPGJYZhabB8dHpAKw==*a5jmMBbc1azuNLnmaosCug==");
 
-var user = {
+// Get the query string from the current URL
+const queryString = window.location.search;
 
+// Parse the query string into an object
+const params = new URLSearchParams(queryString);
+
+// Create the user object
+const user = {
   id: 1,
-  name: "Markus Urban",
-  username: "markus",
-  email: "m@m.de",
+  name: params.get("name") || "Demo user",
+  username: params.get("username") || "demo",
+  email: params.get("email") || "demo@demo.com",
   image: "default.png",
-  description: "Un estudiant de IA"
-
+  description: "This is a demo user"
 };
 
 

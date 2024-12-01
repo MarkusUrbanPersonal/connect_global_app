@@ -1181,10 +1181,11 @@ function add_recommendations() {
 
 function bottom_bar(page) {
 
+  delete_interest_cards();
+  
   if (page == "home") {
 
     if (discover_open) {
-      delete_interest_cards();
       // If alredy joined a group, show recommended users
       document.getElementById("screen_profile").style.display = "none";
       document.getElementById("group_container").style.display = "none";

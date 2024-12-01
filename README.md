@@ -25,7 +25,6 @@ To join the app, the user is asked to fill some basic information.
 
 <img src="https://github.com/user-attachments/assets/16ad260a-cd0e-48a8-931f-6f1aea2e89e2" width="200">
 
-
 #### 2. Join a group
 The user can select the event that he's attending, that could be almost anything. There could even be groups for university classes, office employees or even neighbourhoods!
 
@@ -34,11 +33,22 @@ The user can select the event that he's attending, that could be almost anything
 #### 3. Select your interests
 This interests include main topics, but the list can be tailored to any specific event.
 
+<img src="https://github.com/user-attachments/assets/fca1718b-c911-4a20-a8bf-9fe89dc55105" width="200">
+
 #### 4. Discover similar users
 It's time to discover similar users. They can be searched and found on the app.
+
+<img src="https://github.com/user-attachments/assets/f9c4d4a7-4cfc-49b6-a29f-364083830f6d" width="200">
 
 #### 5. Make new connections
 In this case, as it's a Hackathon, interests related to programming have been added. 
 
+<img src="https://github.com/user-attachments/assets/c3d04c1c-89c1-43b0-9ee9-28a5e8af3559" width="200">
+
 ### The future ✨
-What about going one step further, and using *bluetooth* to actually connect users, as they're walking through common areas. The phone could display the common interests and conversation would start instantly. 
+What about going one step further, and using *bluetooth* to actually connect users, as they're walking through common areas. The phone could display the common interests and conversation would start instantly.
+
+<p align="right">
+  <img src="https://github.com/user-attachments/assets/4eefaf24-f4ca-4d93-a199-249804f0ed41" width="200">
+</p>
+

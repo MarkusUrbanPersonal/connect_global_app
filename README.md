@@ -1,5 +1,6 @@
 
 
+
 <p align="center">
   <img style="margin-left:auto;margin-right:auto;" src="https://github.com/user-attachments/assets/7d653a56-c534-48ae-8bb6-f9de00d57656" alt="drawing" width="250" />
 </p>
@@ -18,27 +19,27 @@ Meeting people can be challenging, especially when travelling or attending event
 ### **How it works** 📱
 
 #### **1. Create an account**
-To join the app, the user is asked to fill some basic information.
+To join the app, you'll have to fill some basic information. 
 
 <img src="https://github.com/user-attachments/assets/16ad260a-cd0e-48a8-931f-6f1aea2e89e2" width="200">
 
 #### **2. Join a group**
-The user can select the event that he's attending, that could be almost anything. There could even be groups for university classes, office employees or even neighbourhoods!
+After joining, you can select the event that you're attending, that could be almost anything. There could even be groups for university classes, office employees or even neighbourhoods!
 
 <img src="https://github.com/user-attachments/assets/2de92139-a682-4c0e-9959-3f894dd16135" width="200">
 
 #### **3. Select your interests**
-This interests include main topics, but the list can be tailored to any specific event.
+This interests include main topics, but the list can be tailored to any specific event. There's also a search bar to find more interests. 
 
 <img src="https://github.com/user-attachments/assets/fca1718b-c911-4a20-a8bf-9fe89dc55105" width="200">
 
 #### **4. Discover similar users**
-It's time to discover similar users. They can be searched and found on the app.
+After adding your interests, other members with similar interests start to appear on the main screen. Hooray! 
 
 <img src="https://github.com/user-attachments/assets/f9c4d4a7-4cfc-49b6-a29f-364083830f6d" width="200">
 
 #### **5. Make new connections**
-In this case, as it's a Hackathon, interests related to programming have been added. 
+You can check your common interests and start a conversation. **Making new connections has never been easier!** ☀️
 
 <img src="https://github.com/user-attachments/assets/c3d04c1c-89c1-43b0-9ee9-28a5e8af3559" width="200">
 
@@ -46,13 +47,15 @@ In this case, as it's a Hackathon, interests related to programming have been ad
 ### Tech Stack
 The web-app has been created using:
   
-  🔵 HTML
+  🔵 **HTML**
   
-  🟢 CSS
+  🟢 **CSS**
   
-  🟨 JS
+  🟨 **Javascript**
   
-  ✨ Flowbite (UI Components)
+  ✨ **Flowbite** *(UI Components)*
+
+  🐍 **Python** *(basic backend)*
 
 
 ### **The future** ✨

@@ -640,15 +640,27 @@ function get_user_interests(given_user_id, page) {
         joined_interests_id.push(user_interests[interest]["id"]);
       }
 
+      if (user_interests.length > 0) {
+        document.getElementById("profile_interests_empty_screen").style.display = "none";
+      }
+
     }
 
     else if (page == "profile_diff") {
+
+      if (user_interests.length > 0) {
+        document.getElementById("profile_interests_empty_screen").style.display = "none";
+      }
 
       get_common_interests(data);
 
     }
 
     else if (page == "profile_own") {
+
+      if (user_interests.length > 0) {
+        document.getElementById("profile_interests_empty_screen").style.display = "none";
+      }
 
       create_common_interest_cards(data, "profile_interests_list");
 
@@ -1084,12 +1096,6 @@ function join_interest_animation(interest_id, action) {
 
 // Join Create
 
-function start_group_create() {
-
-  // Hide the group page and 
-}
-
-
 function search_interest() {
 
   document.getElementById("screen_profile").style.display = "none";
@@ -1135,7 +1141,6 @@ function create_demo_users() {
   
 }
 
-
 var random_recommended_users = ["John Doe", "Hans Urban", "Laura Casanovas"];
 
 function add_recommendations() {
@@ -1169,12 +1174,7 @@ function add_recommendations() {
 
   }
 
-
 }
-
-
-
-
 
 // BOTTOM BAR
 // My eyes want to close but my head says: pip install energy
@@ -1184,6 +1184,7 @@ function bottom_bar(page) {
   if (page == "home") {
 
     if (discover_open) {
+      delete_interest_cards();
       // If alredy joined a group, show recommended users
       document.getElementById("screen_profile").style.display = "none";
       document.getElementById("group_container").style.display = "none";
@@ -1196,5 +1197,11 @@ function bottom_bar(page) {
 
   }
 
+
+  else if (page == "interests") {
+
+    search_interest();
+    
+  }
 
 }

@@ -10,7 +10,7 @@
 
 ![Banner](https://github.com/user-attachments/assets/7b7b13a8-68ab-4ad2-998a-b61804584fc2)
 
-<img src="https://github.com/user-attachments/assets/748ac5a9-5cf6-4d2b-a5fd-0324609400ab">
+<!--<img src="https://github.com/user-attachments/assets/748ac5a9-5cf6-4d2b-a5fd-0324609400ab">-->
 
 ### 1. The concept ☀️
 Meeting people can be challenging, especially when travelling or attending events like Hackathons. 

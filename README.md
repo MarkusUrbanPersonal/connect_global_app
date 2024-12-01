@@ -12,41 +12,51 @@
 
 <!--<img src="https://github.com/user-attachments/assets/748ac5a9-5cf6-4d2b-a5fd-0324609400ab">-->
 
-### 1. The concept ☀️
-Meeting people can be challenging, especially when travelling or attending events like Hackathons. 
+### **The concept** ☀️
+Meeting people can be challenging, especially when travelling or attending events like Hackathons. This is where **Connect** comes in. 
 
-This is where **Connect** is born, an app that makes the process of meeting new people much simpler, connecting people with similar interests.
+### **How it works** 📱
 
-
-### 2. How it works 📱
-
-#### 1. Create an account
+#### **1. Create an account**
 To join the app, the user is asked to fill some basic information.
 
 <img src="https://github.com/user-attachments/assets/16ad260a-cd0e-48a8-931f-6f1aea2e89e2" width="200">
 
-#### 2. Join a group
+#### **2. Join a group**
 The user can select the event that he's attending, that could be almost anything. There could even be groups for university classes, office employees or even neighbourhoods!
 
 <img src="https://github.com/user-attachments/assets/2de92139-a682-4c0e-9959-3f894dd16135" width="200">
 
-#### 3. Select your interests
+#### **3. Select your interests**
 This interests include main topics, but the list can be tailored to any specific event.
 
 <img src="https://github.com/user-attachments/assets/fca1718b-c911-4a20-a8bf-9fe89dc55105" width="200">
 
-#### 4. Discover similar users
+#### **4. Discover similar users**
 It's time to discover similar users. They can be searched and found on the app.
 
 <img src="https://github.com/user-attachments/assets/f9c4d4a7-4cfc-49b6-a29f-364083830f6d" width="200">
 
-#### 5. Make new connections
+#### **5. Make new connections**
 In this case, as it's a Hackathon, interests related to programming have been added. 
 
 <img src="https://github.com/user-attachments/assets/c3d04c1c-89c1-43b0-9ee9-28a5e8af3559" width="200">
 
-### The future ✨
-What about going one step further, and using *bluetooth* to actually connect users, as they're walking through common areas. The phone could display the common interests and conversation would start instantly.
+
+### Tech Stack
+The web-app has been created using:
+  
+  🔵 HTML
+  
+  🟢 CSS
+  
+  🟨 JS
+  
+  ✨ Flowbite (UI Components)
+
+
+### **The future** ✨
+What about going one step further, and using *bluetooth* to actually connect users, as they're walking through common areas? The phone could display the common interests and conversation would start instantly. That is a future vision for this project. Until then, **Connect** is a great way to connect with new people at all kind of events. 
 
 <p align="right">
   <img src="https://github.com/user-attachments/assets/4eefaf24-f4ca-4d93-a199-249804f0ed41" width="200">

@@ -14,17 +14,31 @@
 
 ### 1. The concept ☀️
 Meeting people can be challenging, especially when travelling or attending events like Hackathons. 
-This is where **Connect** is born, an app that makes the process of meeting new people much simpler, connecting people with similar interests toghether. 
 
-### 2. The parts 📱
+This is where **Connect** is born, an app that makes the process of meeting new people much simpler, connecting people with similar interests.
 
-#### A) Signup
-To join the app, the user is asked to fill some basic information and is asked his main interests. 
-This interests include main topics, but the list can be tailored to any specific event. 
-In this case, as it's a Hackathon, interests related to programming have been added. 
 
-#### B) User discovery
+### 2. How it works 📱
+
+#### 1. Create an account
+To join the app, the user is asked to fill some basic information.
+
+<img src="https://github.com/user-attachments/assets/16ad260a-cd0e-48a8-931f-6f1aea2e89e2" width="200">
+
+
+#### 2. Join a group
+The user can select the event that he's attending, that could be almost anything. There could even be groups for university classes, office employees or even neighbourhoods!
+
+<img src="https://github.com/user-attachments/assets/2de92139-a682-4c0e-9959-3f894dd16135" width="200">
+
+#### 3. Select your interests
+This interests include main topics, but the list can be tailored to any specific event.
+
+#### 4. Discover similar users
 It's time to discover similar users. They can be searched and found on the app.
 
-#### C) The future 🌐
-What about making one step further, and using *bluetooth* to actually connect users, as they're walking through common areas. The phone could display the common interests and conversation would start instantly. 
+#### 5. Make new connections
+In this case, as it's a Hackathon, interests related to programming have been added. 
+
+### The future ✨
+What about going one step further, and using *bluetooth* to actually connect users, as they're walking through common areas. The phone could display the common interests and conversation would start instantly. 

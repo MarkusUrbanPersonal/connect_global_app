@@ -144,7 +144,8 @@ function signup() {
 function server_signup(name, email, username, password) {
    
     // Open the main app page and pass the values
-    
+    window.location.href = "./../web/?name=" + name + "&email=" + email + "&username=" + username;
+
 }
 
 

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Connect</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./src/blue-logo.png">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet">
@@ -62,6 +63,10 @@
   /*background: #2563eb;  */
 }
 
+.logo-transform-color {
+  filter: grayscale(1) sepia(1) hue-rotate(200deg) saturate(10) brightness(1.2);
+}
+
 </style>
 </head>
 <body style="margin-bottom: 60px;">
@@ -118,8 +123,8 @@
 <div id="screen_main" style="padding:30px;display:;">
 
   <div class="flex flex-col items-center justify-center px-6 mx-auto md:h-screen lg:py-0">
-    <a href="#" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
-      <img class="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo">
+    <a href="#" style="color: rgba(29, 78, 216);" class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
+      <img class="logo-transform-color w-8 h-8 mr-2" src="./src/icon.png" alt="logo">
       Connect
     </a>
   </div>
